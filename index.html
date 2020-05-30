@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>project 7</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="css/style-home7.css">
+		<link rel="stylesheet" type="text/css" href="../fontawesome/css/all.min.css">
+		<link rel="icon" href="icon.ico" type="image/x-icon">
+	</head>
+	
+	<body>
+		<nav>
+			<span id="close">X</span>
+			<ul>
+				<li>
+					<a href="photography/index-photography.html">photography</a>
+				</li>
+				<li><a href="clothing/index-clothing.html">fashion shop</a>
+				</li>
+				<li><a href="blog/index-socialmedia.html">blog</a></li>
+				<li><a href="analysis/index-analysis.html">about us</a></li>
+				<li><a href="#">learning</a></li>
+			</ul>
+		</nav>
+		<a href="https://mailchi.mp/5aa35ffaffe2/webishsubscribe">
+			<div>get started <i class="fas fa-angle-double-right"></i></div>
+		</a>
+		<button id="menu">navigate</button>
+		<footer>
+			<h3 id="date"></h3>
+			<p> website by webish</p>
+		</footer>
+	</body>
+
+	<script type="text/javascript">
+		// document.getElementById("date").innerHTML = date();
+		{	let menu = document.querySelector("nav");
+			let openMenu = document.getElementById('menu');
+			let closeMenu = document.getElementById('close');
+			let showDate = document.getElementById("date");
+			let wkDay = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+
+			let setDate = setInterval(displayDate, 200 );
+				function displayDate() {
+					let fullDate = new Date();
+					let year = fullDate.getFullYear();
+					let month = fullDate.getMonth() + 1;
+					let date = fullDate.getDate();
+					day = wkDay[fullDate.getDay()];
+					let hour = fullDate.getHours();
+					let min = fullDate.getMinutes();
+					showDate.innerHTML =
+						day +', '+ year +'-0'+ month.toString() +'-'+ date +'  '+ hour +':'+ min ;
+				}
+
+			setDate;
+			openMenu.addEventListener("click", function (){
+				console.log("here");
+				menu.classList.add('active');
+			});
+			closeMenu.addEventListener("click", function () {
+				// nav.style.transform = ("translateY(-100%)");
+				menu.classList.remove('active');
+			});
+			menu.addEventListener("click", function() {
+				menu.classList.remove("active");
+			});
+		}
+	</script>
+</html>
